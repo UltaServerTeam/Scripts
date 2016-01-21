@@ -9,7 +9,7 @@ Write-Host "Please establish an O365 connection if you have not done so" -Backgr
 Start-Sleep 1
 
 #Establish On-Premise Exchange Connection
-# Connect to On Premises Exchange
+#Connect to On Premises Exchange
 $OnPremiseSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://server.domain.lcl/powershell/ -Authentication Kerberos
 Import-PSSession $OnPremiseSession
 Write-Host "on prem session connected" -BackgroundColor darkblue
@@ -33,7 +33,7 @@ Write-Host "$LGuid" -BackgroundColor DarkRed
 Start-Sleep 2
 
 #Sets onPremise Guid to match O365 Guid
-Set-RemoteMailbox <alias> -ExchangeGuid $RGuid 
+Set-RemoteMailbox $alias -ExchangeGuid $RGuid 
 
 
 
